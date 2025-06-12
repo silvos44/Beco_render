@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: prestashop
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: PS_DEV_MODE
+        value: false
+      - key: PS_INSTALL_AUTO
+        value: 0
+      - key: DB_SERVER
+        value: your-db-host
+      - key: DB_NAME
+        value: prestashop
+      - key: DB_USER
+        value: prestashop_user
+      - key: DB_PASSWD
+        value: prestashop_pass
